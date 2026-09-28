@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariflar — TredingUZ</title>
+    <link rel="stylesheet" href="stil/asosiy.css">
+    <link rel="stylesheet" href="stil/tariflar.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">TredingUZ</span>
+        </div>
+        <nav>
+            <a href="dashboard.html">Panel</a>
+            <a href="analiz.html">Analiz</a>
+            <a href="tariflar.html" class="active">Tariflar</a>
+            <a href="referal.html">Referal</a>
+            <a href="login.html">Chiqish</a>
+        </nav>
+    </header>
+
+    <main class="tariflar">
+        <h1>Tariflar</h1>
+        <p class="tariflar-sub">O'zingizga mos tarifni tanlang</p>
+
+        <div class="tariflar-grid">
+            <div class="tarif">
+                <h2>Bepul</h2>
+                <p class="narx">$0</p>
+                <ul>
+                    <li>✅ Kunlik 1 ta analiz</li>
+                    <li>✅ 5 kunlik punkt hisobi</li>
+                    <li>✅ Asosiy indikator</li>
+                    <li>❌ Forex, Gold, BTC</li>
+                </ul>
+                <button>Boshlash</button>
+            </div>
+
+            <div class="tarif plus">
+                <div class="badge">Mashhur</div>
+                <h2>Plus</h2>
+                <p class="narx">$10<span>/oy</span></p>
+                <ul>
+                    <li>✅ Kunlik 10 ta analiz</li>
+                    <li>✅ Barcha indikatorlar</li>
+                    <li>✅ 6-kun prognozi</li>
+                    <li>✅ Forex, Gold, BTC</li>
+                </ul>
+                <button>Tanlash</button>
+            </div>
+
+            <div class="tarif premium">
+                <h2>Premium</h2>
+                <p class="narx">$30<span>/oy</span></p>
+                <ul>
+                    <li>✅ Cheksiz analiz</li>
+                    <li>✅ Shaxsiy indikator</li>
+                    <li>✅ MT5 ulash</li>
+                    <li>✅ Avtomatik savdo</li>
+                </ul>
+                <button>Tanlash</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

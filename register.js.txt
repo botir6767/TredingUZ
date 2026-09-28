@@ -1,0 +1,25 @@
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const ism = document.getElementById("ism").value;
+    const email = document.getElementById("email").value;
+    const parol = document.getElementById("parol").value;
+    const parol2 = document.getElementById("parol2").value;
+
+    if (parol !== parol2) {
+        alert("Parollar mos kelmadi!");
+        return;
+    }
+
+    if (ism && email && parol) {
+        alert("Ro'yxatdan o'tdingiz! (keyin bazaga ulanadi)");
+        window.location.href = "dashboard.html";
+    }
+});
+
+function googleRoyxat() {
+    alert("Google bilan ro'yxatdan o'tish (keyin ulanadi)");
+}
+
+function appleRoyxat() {
+    alert("Apple bilan ro'yxatdan o'tish (keyin ulanadi)");
+}

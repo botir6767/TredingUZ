@@ -1,0 +1,308 @@
+/* ===== ASOSIY ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fon: #0a0e17;
+    --fon-2: #111827;
+    --fon-3: #1a2332;
+    --yashil: #00ff88;
+    --yashil-2: #00cc6a;
+    --qizil: #ff4757;
+    --oltin: #ffd700;
+    --matn: #e5e7eb;
+    --matn-2: #9ca3af;
+    --chegara: #1f2937;
+}
+
+body {
+    font-family: 'Segoe UI', 'Courier New', monospace;
+    background-color: var(--fon);
+    color: var(--matn);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: linear-gradient(180deg, var(--fon-2) 0%, var(--fon) 100%);
+    border-bottom: 1px solid var(--chegara);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.logo-text {
+    background: linear-gradient(90deg, var(--yashil) 0%, var(--oltin) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--matn-2);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--yashil);
+}
+
+nav a.active {
+    color: var(--yashil);
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--yashil);
+    border-radius: 2px;
+}
+
+.btn-kirish {
+    padding: 8px 20px;
+    border: 1px solid var(--yashil);
+    border-radius: 6px;
+    color: var(--yashil) !important;
+}
+
+.btn-kirish:hover {
+    background-color: var(--yashil);
+    color: var(--fon) !important;
+}
+
+.btn-royxat {
+    padding: 8px 20px;
+    background: linear-gradient(90deg, var(--yashil) 0%, var(--yashil-2) 100%);
+    border-radius: 6px;
+    color: var(--fon) !important;
+    font-weight: bold;
+}
+
+.btn-royxat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 100px 20px 60px;
+    background: radial-gradient(ellipse at top, rgba(0, 255, 136, 0.08) 0%, transparent 60%);
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--yashil) 0%, var(--oltin) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.hero-sub {
+    font-size: 20px;
+    color: var(--matn-2);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.btn {
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--yashil) 0%, var(--yashil-2) 100%);
+    color: var(--fon);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+}
+
+.btn-secondary {
+    border: 1px solid var(--chegara);
+    color: var(--matn);
+}
+
+.btn-secondary:hover {
+    border-color: var(--yashil);
+    color: var(--yashil);
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--yashil);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--matn-2);
+}
+
+/* ===== XUSUSIYATLAR ===== */
+.xususiyatlar {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.xususiyatlar h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: var(--matn);
+}
+
+.xususiyatlar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.xususiyat-karta {
+    background: linear-gradient(180deg, var(--fon-2) 0%, var(--fon-3) 100%);
+    border: 1px solid var(--chegara);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s;
+}
+
+.xususiyat-karta:hover {
+    border-color: var(--yashil);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+}
+
+.xususiyat-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.xususiyat-karta h3 {
+    color: var(--yashil);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.xususiyat-karta p {
+    color: var(--matn-2);
+    font-size: 14px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--chegara);
+    margin-top: 60px;
+    color: var(--matn-2);
+    font-size: 14px;
+}
+
+.footer-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--yashil);
+    margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-sub {
+        font-size: 16px;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .xususiyatlar {
+        padding: 40px 20px;
+    }
+}

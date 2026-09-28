@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiz — TredingUZ</title>
+    <link rel="stylesheet" href="stil/asosiy.css">
+    <link rel="stylesheet" href="stil/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">TredingUZ</span>
+        </div>
+        <nav>
+            <a href="dashboard.html">Panel</a>
+            <a href="analiz.html" class="active">Analiz</a>
+            <a href="tariflar.html">Tariflar</a>
+            <a href="referal.html">Referal</a>
+            <a href="login.html">Chiqish</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <h1>📈 Analiz</h1>
+
+        <!-- BOZORLAR -->
+        <div class="statistika">
+            <div class="stat-karta">
+                <div class="stat-icon">💱</div>
+                <h3>Forex</h3>
+                <p class="stat-value" id="forex">EUR/USD</p>
+                <p style="color: var(--matn-2); font-size: 13px; margin-top: 5px;">1.0854 ▲ 0.12%</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">🥇</div>
+                <h3>Gold</h3>
+                <p class="stat-value" id="gold">XAU/USD</p>
+                <p style="color: var(--matn-2); font-size: 13px; margin-top: 5px;">2,345.67 ▲ 0.45%</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">₿</div>
+                <h3>BTC</h3>
+                <p class="stat-value" id="btc">BTC/USDT</p>
+                <p style="color: var(--matn-2); font-size: 13px; margin-top: 5px;">67,890 ▼ 0.23%</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">📊</div>
+                <h3>Indekslar</h3>
+                <p class="stat-value">S&P 500</p>
+                <p style="color: var(--matn-2); font-size: 13px; margin-top: 5px;">5,234 ▲ 0.18%</p>
+            </div>
+        </div>
+
+        <!-- AVTOMATIK ANALIZ -->
+        <div class="gif-qism" style="text-align: left; margin-bottom: 30px;">
+            <h2>🤖 Avtomatik analiz</h2>
+            <p id="analizNatija" style="font-size: 20px; font-weight: bold; margin: 20px 0; color: var(--matn-2);">
+                Analiz yuklanmoqda...
+            </p>
+            <button onclick="analizQil()" style="padding: 12px 30px; background: linear-gradient(90deg, var(--yashil), var(--yashil-2)); color: var(--fon); border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                🔄 Yangilash
+            </button>
+        </div>
+
+        <!-- 5 KUNLIK PUNKT HISOBOTI -->
+        <div class="gif-qism" style="text-align: left;">
+            <h2>📊 5 kunlik punkt hisobi</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div class="stat-karta">
+                    <h3>1-kun</h3>
+                    <p class="stat-value" style="font-size: 24px;">10</p>
+                </div>
+                <div class="stat-karta">
+                    <h3>2-kun</h3>
+                    <p class="stat-value" style="font-size: 24px;">15</p>
+                </div>
+                <div class="stat-karta">
+                    <h3>3-kun</h3>
+                    <p class="stat-value" style="font-size: 24px;">20</p>
+                </div>
+                <div class="stat-karta">
+                    <h3>4-kun</h3>
+                    <p class="stat-value" style="font-size: 24px;">25</p>
+                </div>
+                <div class="stat-karta">
+                    <h3>5-kun</h3>
+                    <p class="stat-value" style="font-size: 24px;">30</p>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div class="stat-karta">
+                    <h3>Jami</h3>
+                    <p class="stat-value" id="jamiPunkt">100</p>
+                </div>
+                <div class="stat-karta">
+                    <h3>O'rtacha</h3>
+                    <p class="stat-value" id="ortachaPunkt">20.0</p>
+                </div>
+                <div class="stat-karta">
+                    <h3>6-kun prognozi</h3>
+                    <p class="stat-value" id="prognozPunkt">22.0</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="skript/analiz.js"></script>
+</body>
+</html>

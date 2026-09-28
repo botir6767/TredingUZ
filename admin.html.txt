@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel — TredingUZ</title>
+    <link rel="stylesheet" href="stil/asosiy.css">
+    <link rel="stylesheet" href="stil/admin.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">TredingUZ</span>
+            <span class="admin-badge">ADMIN</span>
+        </div>
+        <nav>
+            <a href="admin.html" class="active">Admin Panel</a>
+            <a href="dashboard.html">Foydalanuvchi</a>
+            <a href="login.html">Chiqish</a>
+        </nav>
+    </header>
+
+    <main class="admin-panel">
+        <h1>👑 Admin Panel</h1>
+        <p class="admin-sub">Tizimni boshqarish va tuzatish</p>
+
+        <!-- ADMINLAR RO'YXATI -->
+        <section class="admin-section">
+            <h2>👥 Adminlar</h2>
+            <div class="admin-grid">
+                <div class="admin-karta">
+                    <div class="admin-avatar">👑</div>
+                    <h3>Bekaismoilov2010</h3>
+                    <p>Bosh admin</p>
+                    <span class="admin-status active">Faol</span>
+                </div>
+                <div class="admin-karta">
+                    <div class="admin-avatar">👤</div>
+                    <h3>Admin 2</h3>
+                    <p>Yordamchi admin</p>
+                    <span class="admin-status">Kutilmoqda</span>
+                </div>
+                <div class="admin-karta qoshish">
+                    <div class="admin-avatar">➕</div>
+                    <h3>Admin qo'shish</h3>
+                    <p>Email orqali qo'shish</p>
+                    <button onclick="adminQoshish()">Qo'shish</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- XATOLARNI KO'RISH -->
+        <section class="admin-section">
+            <h2>🐛 Xatolar va Buzilgan joylar</h2>
+            <div class="xato-grid">
+                <div class="xato-karta">
+                    <div class="xato-header">
+                        <span class="xato-status kritik">Kritik</span>
+                        <span class="xato-time">5 daqiqa oldin</span>
+                    </div>
+                    <h3>Login sahifasida xato</h3>
+                    <p>Parol kiritilganda xato chiqyapti</p>
+                    <button onclick="tuzatish(1)">Tuzatish</button>
+                </div>
+                <div class="xato-karta">
+                    <div class="xato-header">
+                        <span class="xato-status orta">O'rta</span>
+                        <span class="xato-time">1 soat oldin</span>
+                    </div>
+                    <h3>Menyu buzilgan</h3>
+                    <p>Mobil telefonda menyu chiroyli chiqmayapti</p>
+                    <button onclick="tuzatish(2)">Tuzatish</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENYUNI TAHRIRLASH -->
+        <section class="admin-section">
+            <h2>📝 Menyuni tahrirlash</h2>
+            <div class="menyu-tahrir">
+                <div class="menyu-item">
+                    <label>Bosh sahifa</label>
+                    <input type="text" value="index.html">
+                    <button>Saqlash</button>
+                </div>
+                <div class="menyu-item">
+                    <label>Analiz</label>
+                    <input type="text" value="analiz.html">
+                    <button>Saqlash</button>
+                </div>
+                <div class="menyu-item">
+                    <label>Tariflar</label>
+                    <input type="text" value="tariflar.html">
+                    <button>Saqlash</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATISTIKA -->
+        <section class="admin-section">
+            <h2>📊 Statistika</h2>
+            <div class="statistika">
+                <div class="stat-karta">
+                    <div class="stat-icon">👥</div>
+                    <h3>Foydalanuvchilar</h3>
+                    <p class="stat-value">0</p>
+                </div>
+                <div class="stat-karta">
+                    <div class="stat-icon">📈</div>
+                    <h3>Savdolar</h3>
+                    <p class="stat-value">0</p>
+                </div>
+                <div class="stat-karta">
+                    <div class="stat-icon">💰</div>
+                    <h3>Daromad</h3>
+                    <p class="stat-value">$0</p>
+                </div>
+                <div class="stat-karta">
+                    <div class="stat-icon">🐛</div>
+                    <h3>Xatolar</h3>
+                    <p class="stat-value">2</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="skript/admin.js"></script>
+</body>
+</html>

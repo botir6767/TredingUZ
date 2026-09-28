@@ -1,0 +1,45 @@
+// TredingUZ — Analiz skript
+console.log("Analiz sahifasi ishga tushdi!");
+
+// Avtomatik analiz qilish
+function analizQil() {
+    const natija = document.getElementById("analizNatija");
+    if (!natija) return;
+    
+    // Yuklanmoqda
+    natija.textContent = "Analiz yuklanmoqda...";
+    natija.style.color = "var(--matn-2)";
+    
+    // Simulyatsiya (keyin real ma'lumot bilan almashtiriladi)
+    setTimeout(() => {
+        const foiz = Math.floor(Math.random() * 100);
+        
+        if (foiz > 50) {
+            natija.textContent = "🟢 BUY signal — " + foiz + "% ishonch";
+            natija.style.color = "#00ff88";
+        } else {
+            natija.textContent = "🔴 SELL signal — " + (100 - foiz) + "% ishonch";
+            natija.style.color = "#ff4757";
+        }
+    }, 1000);
+}
+
+// Forex, Gold, BTC ma'lumotlarini yangilash
+function malumotYangila() {
+    const forex = document.getElementById("forex");
+    const gold = document.getElementById("gold");
+    const btc = document.getElementById("btc");
+    
+    if (forex) forex.textContent = "EUR/USD";
+    if (gold) gold.textContent = "XAU/USD";
+    if (btc) btc.textContent = "BTC/USDT";
+}
+
+// Sahifa yuklanganda
+document.addEventListener("DOMContentLoaded", function() {
+    analizQil();
+    malumotYangila();
+    
+    // Har 30 sekundda yangilash
+    setInterval(analizQil, 30000);
+});

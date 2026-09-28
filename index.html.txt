@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TredingUZ — Trading Analiz Platformasi</title>
+    <link rel="stylesheet" href="stil/asosiy.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">TredingUZ</span>
+        </div>
+        <nav>
+            <a href="index.html" class="active">Bosh sahifa</a>
+            <a href="analiz.html">Analiz</a>
+            <a href="tariflar.html">Tariflar</a>
+            <a href="login.html" class="btn-kirish">Kirish</a>
+            <a href="register.html" class="btn-royxat">Ro'yxatdan o'tish</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TredingUZ</h1>
+            <p class="hero-sub">Trading analizlar, 5 kunlik punkt hisobi va avtomatik tahlillar</p>
+            <div class="hero-buttons">
+                <a href="register.html" class="btn btn-primary">Boshlash</a>
+                <a href="analiz.html" class="btn btn-secondary">Analizni ko'rish</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Kunlik punkt</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Analiz</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Bepul boshlash</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- XUSUSIYATLAR -->
+    <section class="xususiyatlar">
+        <h2>Nima qila olasiz?</h2>
+        <div class="xususiyatlar-grid">
+            <div class="xususiyat-karta">
+                <div class="xususiyat-icon">📈</div>
+                <h3>5 kunlik punkt hisobi</h3>
+                <p>Har bir savdo kuningizni kuzatib boring va o'rtacha punktni hisoblang.</p>
+            </div>
+            <div class="xususiyat-karta">
+                <div class="xususiyat-icon">🤖</div>
+                <h3>Avtomatik analiz</h3>
+                <p>Forex, Gold, BTC va boshqa bozorlar uchun avtomatik tahlillar.</p>
+            </div>
+            <div class="xususiyat-karta">
+                <div class="xususiyat-icon">📊</div>
+                <h3>6-kun prognozi</h3>
+                <p>5 kunlik ma'lumotlar asosida 6-kun uchun prognoz oling.</p>
+            </div>
+            <div class="xususiyat-karta">
+                <div class="xususiyat-icon">👥</div>
+                <h3>Referal tizim</h3>
+                <p>Do'stingizni chaqiring va 1 hafta bepul Plus oling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">TredingUZ</div>
+            <p>&copy; 2026 TredingUZ. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="skript/asosiy.js"></script>
+</body>
+</html>

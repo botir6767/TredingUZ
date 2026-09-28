@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — TredingUZ</title>
+    <link rel="stylesheet" href="stil/asosiy.css">
+    <link rel="stylesheet" href="stil/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">TredingUZ</span>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="active">Panel</a>
+            <a href="analiz.html">Analiz</a>
+            <a href="tariflar.html">Tariflar</a>
+            <a href="referal.html">Referal</a>
+            <a href="login.html">Chiqish</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <h1>Salom, Foydalanuvchi! 👋</h1>
+
+        <div class="statistika">
+            <div class="stat-karta">
+                <div class="stat-icon">📈</div>
+                <h3>5 kunlik punkt</h3>
+                <p id="punkt5" class="stat-value">0</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">📊</div>
+                <h3>O'rtacha punkt</h3>
+                <p id="ortacha" class="stat-value">0</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">🔮</div>
+                <h3>6-kun prognozi</h3>
+                <p id="prognoz" class="stat-value">0</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">⭐</div>
+                <h3>Tarif</h3>
+                <p class="stat-value">Bepul</p>
+            </div>
+        </div>
+
+        <section class="gif-qism">
+            <h2>🎬 GIF Qidirish</h2>
+            <div class="gif-input">
+                <input type="text" id="qidiruv" placeholder="So'z yozing...">
+                <button onclick="gifQidir()">Qidirish</button>
+            </div>
+            <div id="giflar"></div>
+        </section>
+    </main>
+
+    <script src="skript/dashboard.js"></script>
+    <script src="skript/gif.js"></script>
+</body>
+</html>

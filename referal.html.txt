@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referal — TredingUZ</title>
+    <link rel="stylesheet" href="stil/asosiy.css">
+    <link rel="stylesheet" href="stil/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">TredingUZ</span>
+        </div>
+        <nav>
+            <a href="dashboard.html">Panel</a>
+            <a href="analiz.html">Analiz</a>
+            <a href="tariflar.html">Tariflar</a>
+            <a href="referal.html" class="active">Referal</a>
+            <a href="login.html">Chiqish</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <h1>👥 Referal tizimi</h1>
+
+        <!-- REFERAL LINK -->
+        <div class="stat-karta" style="margin-bottom: 30px;">
+            <h3>Sizning referal linkingiz</h3>
+            <p id="referalLink" style="font-size: 14px; color: var(--yashil); word-break: break-all; margin: 15px 0;">
+                https://tredinguz.pages.dev/register.html?ref=SIZNING_ID
+            </p>
+            <button onclick="nusxaOlish()" style="padding: 12px 30px; background: linear-gradient(90deg, var(--yashil), var(--yashil-2)); color: var(--fon); border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                📋 Nusxa olish
+            </button>
+        </div>
+
+        <!-- STATISTIKA -->
+        <div class="statistika">
+            <div class="stat-karta">
+                <div class="stat-icon">👥</div>
+                <h3>Chaqirilgan do'stlar</h3>
+                <p class="stat-value" id="sheriklar">0</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">🎁</div>
+                <h3>Bonus kunlar</h3>
+                <p class="stat-value" id="bonus">0 kun</p>
+            </div>
+            <div class="stat-karta">
+                <div class="stat-icon">💰</div>
+                <h3>Daromad</h3>
+                <p class="stat-value" id="daromad">$0</p>
+            </div>
+        </div>
+
+        <!-- QANDAY ISHLAYDI -->
+        <div class="gif-qism" style="text-align: left;">
+            <h2>❓ Qanday ishlaydi?</h2>
+            <ol style="color: var(--matn-2); line-height: 2; padding-left: 20px;">
+                <li>Do'stingizni referal linkingiz orqali chaqirasiz</li>
+                <li>Do'stingiz ro'yxatdan o'tadi</li>
+                <li>Sizga <strong style="color: var(--yashil);">1 hafta bepul Plus</strong> beriladi</li>
+                <li>Do'stingiz Plus tarifiga o'tsa, sizga <strong style="color: var(--oltin);">$5 bonus</strong> beriladi</li>
+            </ol>
+        </div>
+    </main>
+
+    <script>
+        function nusxaOlish() {
+            const link = document.getElementById("referalLink").textContent.trim();
+            navigator.clipboard.writeText(link).then(() => {
+                alert("✅ Link nusxa olindi!");
+            }).catch(() => {
+                alert("❌ Nusxa olishda xato. Qo'lda nusxa oling.");
+            });
+        }
+    </script>
+</body>
+</html>

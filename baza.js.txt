@@ -1,0 +1,84 @@
+// TredingUZ — Baza API (Neon PostgreSQL)
+// Bu fayl Neon bazasiga ulanish va ma'lumotlarni saqlash uchun
+
+// Neon bazasiga ulanish uchun maxfiy kalit
+// Cloudflare dashboard → Settings → Environment Variables ga qo'shiladi
+const DATABASE_URL = "BU_YERGA_NEON_URL";
+
+// ===== FOYDALANUVCHI QO'SHISH =====
+export async function foydalanuvchiQosh(ism, email, parol) {
+    try {
+        const javob = await fetch(`${DATABASE_URL}/foydalanuvchilar`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                ism: ism,
+                email: email,
+                parol: parol,
+                yaratilgan: new Date().toISOString()
+            })
+        });
+        return await javob.json();
+    } catch (xato) {
+        console.error("Baza xatosi:", xato);
+        return { success: false, message: xato.message };
+    }
+}
+
+// ===== FOYDALANUVCHINI TOPISH =====
+export async function foydalanuvchiTop(email) {
+    try {
+        const javob = await fetch(`${DATABASE_URL}/foydalanuvchilar?email=${email}`);
+        const malumot = await javob.json();
+        return malumot[0] || null;
+    } catch (xato) {
+        console.error("Baza xatosi:", xato);
+        return null;
+    }
+}
+
+// ===== PUNKT SAQLASH =====
+export async function punktSaql(email, kun, punkt) {
+    try {
+        const javob = await fetch(`${DATABASE_URL}/punktlar`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: email,
+                kun: kun,
+                punkt: punkt,
+                yaratilgan: new Date().toISOString()
+            })
+        });
+        return await javob.json();
+    } catch (xato) {
+        console.error("Baza xatosi:", xato);
+        return { success: false, message: xato.message };
+    }
+}
+
+// ===== PUNKTLARNI OLISH =====
+export async function punktlarniOl(email) {
+    try {
+        const javob = await fetch(`${DATABASE_URL}/punktlar?email=${email}`);
+        return await javob.json();
+    } catch (xato) {
+        console.error("Baza xatosi:", xato);
+        return [];
+    }
+}
+
+// ===== ADMIN TEKSHIRUVI =====
+export async function adminTekshir(email) {
+    const ADMIN_EMAILS = ["bekaismoilov2010@gmail.com"];
+    return ADMIN_EMAILS.includes(email);
+}
+
+// ===== UMUMIY BAZA ULANISH =====
+export async function bazaUlanish() {
+    return {
+        ulangan: true,
+        url: DATABASE_URL ? "Ulangan" : "Ulanmagan",
+        vaqt: new Date().toISOString()
+    };
+}

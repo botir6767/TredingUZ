@@ -1,0 +1,27 @@
+const API_KEY = "BU_YERGA_GIPHY_API_KALITINGIZNI_YOZING";
+
+async function gifQidir() {
+    const soz = document.getElementById("qidiruv").value.trim();
+    if (!soz) {
+        alert("So'z yozing!");
+        return;
+    }
+
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${soz}&limit=6`;
+    
+    try {
+        const javob = await fetch(url);
+        const malumot = await javob.json();
+        
+        const giflarDiv = document.getElementById("giflar");
+        giflarDiv.innerHTML = "";
+        
+        malumot.data.forEach(gif => {
+            const img = document.createElement("img");
+            img.src = gif.images.fixed_height.url;
+            giflarDiv.appendChild(img);
+        });
+    } catch (xato) {
+        alert("Xato: " + xato.message);
+    }
+}

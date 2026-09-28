@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirish — TredingUZ</title>
+    <link rel="stylesheet" href="stil/asosiy.css">
+    <link rel="stylesheet" href="stil/login.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">TredingUZ</span>
+            </div>
+            <h2>Kirish</h2>
+            <p class="auth-sub">Akkauntingizga kiring</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Parol</label>
+                    <input type="password" id="parol" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-auth">Kirish</button>
+            </form>
+
+            <div class="ajratuvchi">
+                <span>yoki</span>
+            </div>
+
+            <div class="social-buttons">
+                <button class="social-btn google" onclick="googleKirish()">
+                    <span>🔵</span> Google
+                </button>
+                <button class="social-btn apple" onclick="appleKirish()">
+                    <span>⚫</span> Apple
+                </button>
+                <button class="social-btn tradingview" onclick="tradingviewKirish()">
+                    <span>📈</span> TradingView
+                </button>
+            </div>
+
+            <p class="auth-link">
+                Akkauntingiz yo'qmi? <a href="register.html">Ro'yxatdan o'tish</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="skript/login.js"></script>
+</body>
+</html>

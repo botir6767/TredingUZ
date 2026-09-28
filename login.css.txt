@@ -1,0 +1,159 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+}
+
+.auth-box {
+    background: linear-gradient(180deg, var(--fon-2) 0%, var(--fon-3) 100%);
+    border: 1px solid var(--chegara);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--matn);
+}
+
+.auth-sub {
+    text-align: center;
+    color: var(--matn-2);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--matn-2);
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: var(--fon);
+    border: 1px solid var(--chegara);
+    color: var(--matn);
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--yashil);
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #4b5563;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, var(--yashil) 0%, var(--yashil-2) 100%);
+    color: var(--fon);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-auth:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+.ajratuvchi {
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+}
+
+.ajratuvchi::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--chegara);
+}
+
+.ajratuvchi span {
+    background: var(--fon-2);
+    padding: 0 15px;
+    position: relative;
+    color: var(--matn-2);
+    font-size: 13px;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: var(--fon);
+    border: 1px solid var(--chegara);
+    color: var(--matn);
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.social-btn:hover {
+    border-color: var(--yashil);
+    background-color: var(--fon-3);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--matn-2);
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: var(--yashil);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}

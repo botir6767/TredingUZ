@@ -1,0 +1,211 @@
+.admin-badge {
+    background: linear-gradient(90deg, #ff4757, #ff6b81);
+    color: white;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.admin-panel {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.admin-panel h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, var(--yashil), var(--oltin));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.admin-sub {
+    color: var(--matn-2);
+    margin-bottom: 40px;
+}
+
+.admin-section {
+    margin-bottom: 50px;
+}
+
+.admin-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--matn);
+    border-left: 4px solid var(--yashil);
+    padding-left: 15px;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.admin-karta {
+    background: linear-gradient(180deg, var(--fon-2), var(--fon-3));
+    border: 1px solid var(--chegara);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.admin-karta:hover {
+    border-color: var(--yashil);
+    transform: translateY(-5px);
+}
+
+.admin-karta.qoshish {
+    border-style: dashed;
+    cursor: pointer;
+}
+
+.admin-avatar {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.admin-karta h3 {
+    color: var(--matn);
+    margin-bottom: 5px;
+}
+
+.admin-karta p {
+    color: var(--matn-2);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.admin-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: var(--fon);
+    color: var(--matn-2);
+}
+
+.admin-status.active {
+    background: rgba(0, 255, 136, 0.15);
+    color: var(--yashil);
+}
+
+.admin-karta button {
+    padding: 8px 20px;
+    background: var(--yashil);
+    color: var(--fon);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.xato-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.xato-karta {
+    background: linear-gradient(180deg, var(--fon-2), var(--fon-3));
+    border: 1px solid var(--chegara);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.xato-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.xato-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.xato-status.kritik {
+    background: rgba(255, 71, 87, 0.15);
+    color: #ff4757;
+}
+
+.xato-status.orta {
+    background: rgba(255, 215, 0, 0.15);
+    color: var(--oltin);
+}
+
+.xato-time {
+    color: var(--matn-2);
+    font-size: 12px;
+}
+
+.xato-karta h3 {
+    color: var(--matn);
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.xato-karta p {
+    color: var(--matn-2);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.xato-karta button {
+    padding: 8px 20px;
+    background: var(--yashil);
+    color: var(--fon);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menyu-tahrir {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menyu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--fon-2);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--chegara);
+}
+
+.menyu-item label {
+    min-width: 120px;
+    color: var(--matn);
+    font-weight: bold;
+}
+
+.menyu-item input {
+    flex: 1;
+    padding: 10px 15px;
+    background: var(--fon);
+    border: 1px solid var(--chegara);
+    color: var(--matn);
+    border-radius: 6px;
+}
+
+.menyu-item button {
+    padding: 10px 20px;
+    background: var(--yashil);
+    color: var(--fon);
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}

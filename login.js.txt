@@ -1,0 +1,22 @@
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const parol = document.getElementById("parol").value;
+
+    if (email && parol) {
+        alert("Kirish muvaffaqiyatli! (keyin bazaga ulanadi)");
+        window.location.href = "dashboard.html";
+    }
+});
+
+function googleKirish() {
+    alert("Google bilan kirish (keyin ulanadi)");
+}
+
+function appleKirish() {
+    alert("Apple bilan kirish (keyin ulanadi)");
+}
+
+function tradingviewKirish() {
+    alert("TradingView bilan kirish (keyin ulanadi)");
+}

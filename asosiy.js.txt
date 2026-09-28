@@ -1,0 +1,19 @@
+// TredingUZ — Asosiy skript
+console.log("TredingUZ ishga tushdi!");
+
+// Sahifa yuklanganda
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Sahifa tayyor!");
+    
+    // Animatsiya
+    const kartalar = document.querySelectorAll(".xususiyat-karta");
+    kartalar.forEach((karta, index) => {
+        karta.style.opacity = "0";
+        karta.style.transform = "translateY(20px)";
+        setTimeout(() => {
+            karta.style.transition = "all 0.5s ease";
+            karta.style.opacity = "1";
+            karta.style.transform = "translateY(0)";
+        }, index * 150);
+    });
+});

@@ -1,0 +1,135 @@
+// TredingUZ — Autentifikatsiya API (Cloudflare Worker)
+
+// Adminlar ro'yxati (keyin Neon bazasidan olinadi)
+const ADMIN_EMAILS = [
+    "bekaismoilov2010@gmail.com"
+];
+
+export async function onRequest(context) {
+    const { request } = context;
+
+    // CORS sozlamalari
+    const corsHeaders = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+    };
+
+    // OPTIONS so'rovi (CORS uchun)
+    if (request.method === "OPTIONS") {
+        return new Response(null, { headers: corsHeaders });
+    }
+
+    // Faqat POST qabul qilinadi
+    if (request.method !== "POST") {
+        return new Response(JSON.stringify({
+            success: false,
+            message: "Method not allowed"
+        }), {
+            status: 405,
+            headers: { ...corsHeaders, "Content-Type": "application/json" }
+        });
+    }
+
+    try {
+        const data = await request.json();
+        const { action, email, parol, ism } = data;
+
+        // ===== KIRISH =====
+        if (action === "login") {
+            if (!email || !parol) {
+                return new Response(JSON.stringify({
+                    success: false,
+                    message: "Email va parol kiritilishi shart"
+                }), {
+                    status: 400,
+                    headers: { ...corsHeaders, "Content-Type": "application/json" }
+                });
+            }
+
+            // Admin tekshiruvi
+            const isAdmin = ADMIN_EMAILS.includes(email);
+
+            return new Response(JSON.stringify({
+                success: true,
+                admin: isAdmin,
+                message: isAdmin ? "Admin sifatida kirdingiz" : "Kirish muvaffaqiyatli",
+                foydalanuvchi: {
+                    email: email,
+                    ism: ism || email.split("@")[0],
+                    rol: isAdmin ? "admin" : "user"
+                }
+            }), {
+                headers: { ...corsHeaders, "Content-Type": "application/json" }
+            });
+        }
+
+        // ===== RO'YXATDAN O'TISH =====
+        if (action === "register") {
+            if (!email || !parol || !ism) {
+                return new Response(JSON.stringify({
+                    success: false,
+                    message: "Ism, email va parol kiritilishi shart"
+                }), {
+                    status: 400,
+                    headers: { ...corsHeaders, "Content-Type": "application/json" }
+                });
+            }
+
+            // Admin tekshiruvi
+            const isAdmin = ADMIN_EMAILS.includes(email);
+
+            return new Response(JSON.stringify({
+                success: true,
+                admin: isAdmin,
+                message: isAdmin ? "Admin sifatida ro'yxatdan o'tdingiz" : "Ro'yxatdan o'tdingiz",
+                foydalanuvchi: {
+                    ism: ism,
+                    email: email,
+                    rol: isAdmin ? "admin" : "user"
+                }
+            }), {
+                headers: { ...corsHeaders, "Content-Type": "application/json" }
+            });
+        }
+
+        // ===== ADMIN TEKSHIRUVI =====
+        if (action === "checkAdmin") {
+            const isAdmin = ADMIN_EMAILS.includes(email);
+            return new Response(JSON.stringify({
+                success: true,
+                admin: isAdmin
+            }), {
+                headers: { ...corsHeaders, "Content-Type": "application/json" }
+            });
+        }
+
+        // ===== CHIQISH =====
+        if (action === "logout") {
+            return new Response(JSON.stringify({
+                success: true,
+                message: "Chiqdingiz"
+            }), {
+                headers: { ...corsHeaders, "Content-Type": "application/json" }
+            });
+        }
+
+        // Noma'lum action
+        return new Response(JSON.stringify({
+            success: false,
+            message: "Noma'lum action: " + action
+        }), {
+            status: 400,
+            headers: { ...corsHeaders, "Content-Type": "application/json" }
+        });
+
+    } catch (xato) {
+        return new Response(JSON.stringify({
+            success: false,
+            message: "Xato: " + xato.message
+        }), {
+            status: 500,
+            headers: { ...corsHeaders, "Content-Type": "application/json" }
+        });
+    }
+}

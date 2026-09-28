@@ -1,0 +1,10 @@
+console.log("Dashboard ishga tushdi!");
+
+// 5 kunlik punkt hisobi
+const punktlar = [10, 15, 20, 25, 30];
+const jami = punktlar.reduce((a, b) => a + b, 0);
+const ortacha = jami / punktlar.length;
+
+document.getElementById("punkt5").textContent = jami;
+document.getElementById("ortacha").textContent = ortacha.toFixed(1);
+document.getElementById("prognoz").textContent = (ortacha * 1.1).toFixed(1);

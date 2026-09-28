@@ -1,0 +1,33 @@
+// Adminlar ro'yxati (keyin Neon bazasidan olinadi)
+const ADMINLAR = [
+    "bekaismoilov2010@gmail.com"
+];
+
+export async function onRequest(context) {
+    const { request } = context;
+    
+    if (request.method === "POST") {
+        const data = await request.json();
+        
+        // Admin tekshiruvi
+        if (ADMINLAR.includes(data.email)) {
+            return new Response(JSON.stringify({
+                success: true,
+                admin: true,
+                message: "Admin sifatida kirdingiz"
+            }), {
+                headers: { "Content-Type": "application/json" }
+            });
+        }
+        
+        return new Response(JSON.stringify({
+            success: true,
+            admin: false,
+            message: "Foydalanuvchi sifatida kirdingiz"
+        }), {
+            headers: { "Content-Type": "application/json" }
+        });
+    }
+    
+    return new Response("Method not allowed", { status: 405 });
+}
